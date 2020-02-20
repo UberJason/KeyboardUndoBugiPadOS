@@ -11,4 +11,9 @@ Run the app on an iPad with a keyboard attached, or iPad simulator with the sett
 4. Observe the console printed that undo() was called and performUndo was called, and the state is now 1.
 5. Tap 'Register an Action' twice more. The state should be 3.
 6. Using an iPad with a keyboard attached, or iPad simulator with the setting 'Send Keyboard Shortcuts to Device', hit `CMD+Z`.
-7. Observe the console printed that performUndo was called **twice**, and the state is now 1. But it should only have been called once, and the state should be 2.
+
+On Xcode 11.3.1 and iPadOS 13.3:
+Observe the console printed that performUndo was called **twice**, and the state is now 1. But it should only have been called once, and the state should be 2.
+
+On Xcode 11.4 beta 2 and iPadOS 13.4:
+Observe that the console printed that performUndo was called once, and the state is now 2. But any subsequent presses of CMD+Z do *not* call performUndo, and the state remains at 2.

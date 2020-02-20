@@ -3,6 +3,8 @@
 This project shows a possible bug in iPadOS with a hardware keyboard. When registering with the system `UndoManager`, hitting `CMD+Z` triggers the undo twice.
 
 ## Instructions
+Run the app on an iPad with a keyboard attached, or iPad simulator with the setting 'Send Keyboard Shortcuts to Device'.
+
 1. Tap 'Register an Action' twice.
 2. Observe the console printed that the action was registered twice, and the state is 2.
 3. Tap 'Manual Undo (Not from Keyboard) once.

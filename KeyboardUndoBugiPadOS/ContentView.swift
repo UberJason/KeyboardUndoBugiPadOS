@@ -38,6 +38,19 @@ struct ContentView: View {
     
     var body: some View {
         VStack(spacing: 16) {
+            VStack(alignment: .leading) {
+                Text("Instructions").font(.system(.headline))
+                Text("1. Tap 'Register an Action' twice.")
+                Text("2. Observe the console printed that the action was registered twice, and the state is 2.")
+                Text("3. Tap 'Manual Undo (Not from Keyboard) once.")
+                Text("4. Observe the console printed that undo() was called and performUndo was called, and the state is now 1.")
+                Text("5. Tap 'Register an Action' twice more. The state should be 3.")
+                Text("6. Using an iPad with a keyboard attached, or iPad simulator with the setting 'Send Keyboard Shortcuts to Device', hit `CMD+Z`.")
+                Text("7. Observe the console printed that performUndo was called ") + Text("twice").fontWeight(.bold) + Text(", and the state is now 1. But it should only have been called once, and the state should be 2.")
+            }
+            .padding([.leading, .trailing], 40)
+            .padding(.bottom, 40)
+            
             Button(action: {
                 self.model.registerAction()
             }) {
